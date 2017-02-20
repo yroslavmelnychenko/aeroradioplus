@@ -14,21 +14,32 @@ namespace AeroRadio_.Resources.Model
     {
         public static  List<Stations> list = new List<Stations>();
 
-        public static void loadPlayList(string xmlFiles,ListBox rigrightListBox)
-        {         
-            XmlDocument xDoc = new XmlDocument();
-            xDoc.Load(xmlFiles);
-            XmlNodeList xmlNodeList = xDoc.SelectNodes("//stations/station");
-            foreach(XmlNode Node in xmlNodeList)
+        public static bool loadPlayList(string xmlFiles,ListBox rigrightListBox)
+        {
+            rigrightListBox.Items.Clear();
+            try
             {
-                Stations echo = new Stations();
-                echo.Name = Node.Attributes.GetNamedItem("name").Value;
-                echo.Images = Node.Attributes.GetNamedItem("images").Value;
-                echo.Url = Node.Attributes.GetNamedItem("url").Value;
-                list.Add(echo);                
+                XmlDocument xDoc = new XmlDocument();
+                xDoc.Load(xmlFiles);
+                XmlNodeList xmlNodeList = xDoc.SelectNodes("//stations/station");
+                foreach (XmlNode Node in xmlNodeList)
+                {
+                    Stations echo = new Stations();
+                    echo.Name = Node.Attributes.GetNamedItem("name").Value;
+                    echo.Images = Node.Attributes.GetNamedItem("images").Value;
+                    echo.Url = Node.Attributes.GetNamedItem("url").Value;
+                    list.Add(echo);
+                }
+                foreach (Stations s in list)
+                    rigrightListBox.Items.Add(s);
+                return true;
             }
-            foreach (Stations s in list)
-                rigrightListBox.Items.Add(s);
+            catch
+            {
+                MessageBox.Show("Произошла ошибка в загрузке станций.\nПопробуйте через некоторое время.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return false;
+            }     
+           
         }
        
     }

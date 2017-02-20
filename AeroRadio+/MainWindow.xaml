@@ -86,9 +86,9 @@
             Grid.Row="1"
             Grid.Column="3"
             Grid.ColumnSpan="4"
+            HorizontalAlignment="Center"
             FontFamily="Segoe UI"
             FontSize="12"
-            HorizontalAlignment="Center"
             Foreground="White"
             Text="{Binding Artist, UpdateSourceTrigger=PropertyChanged}" />
 
@@ -97,9 +97,9 @@
             Grid.Row="2"
             Grid.Column="3"
             Grid.ColumnSpan="4"
+            HorizontalAlignment="Center"
             FontFamily="Segoe UI"
             FontSize="12"
-            HorizontalAlignment="Center"
             Foreground="White"
             Text="{Binding Titles, UpdateSourceTrigger=PropertyChanged}" />
 
@@ -108,7 +108,7 @@
         <Button
             x:Name="prevButton"
             Grid.Row="5"
-            Grid.Column="4"            
+            Grid.Column="4"
             Click="prevButton_Click"
             Style="{DynamicResource prevButton}">
             <Button.Background>
@@ -119,7 +119,7 @@
         <Button
             x:Name="playButton"
             Grid.Row="5"
-            Grid.Column="5"            
+            Grid.Column="5"
             Click="playButton_Click"
             Style="{DynamicResource playButton}">
             <Button.Background>
@@ -130,7 +130,7 @@
         <Button
             x:Name="nextButton"
             Grid.Row="5"
-            Grid.Column="6"            
+            Grid.Column="6"
             Click="nextButton_Click"
             Style="{DynamicResource nextButton}">
             <Button.Background>
