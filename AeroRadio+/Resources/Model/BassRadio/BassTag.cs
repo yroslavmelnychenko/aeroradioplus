@@ -39,26 +39,29 @@ namespace AeroRadio_.Resources.Model.BassRadio
 
         public static void updateTags()
         {
-            if (BassTags.BASS_TAG_GetFromURL(BassModelLive.audioStreamBass, _tags) && _tags.artist != "" && _tags.artist != ";")
+            if (BassTags.BASS_TAG_GetFromURL(BassModelLive.audioStreamBass, _tags) && _tags != null)
             {
-                
                 Session session = new Session(API_KEY, API_SECRET);
+                Artist scrobArtist = new Artist(_tags.artist, session);
+                Album crobAlbum = new Album(_tags.artist, _tags.title, session);
+                
                 titleArtist.Artist = _tags.artist;
                 titleArtist.Titles = _tags.title;
                 try
                 {
-                    Album track = new Album(_tags.artist, _tags.title, session);
-                    titleArtist.ImgUrl = track.GetImageURL();
+                    if (crobAlbum.GetImageURL() != null)
+                    {
+                        titleArtist.ImgUrl = scrobArtist.GetImageURL();
+                    }
+                    else
+                    {
+                        titleArtist.ImgUrl = scrobArtist.GetImageURL();
+                    }
                 }
-                catch
-                {
-                    Artist track = new Artist(_tags.artist, session);
-                    if (track.GetImageURL() != null)
-                   {                        
-                        titleArtist.ImgUrl = track.GetImageURL();
-                   }
-                   
-                }
+                catch {
+                    titleArtist.ImgUrl = " ";
+                }               
+                                 
             }
             else 
             {
