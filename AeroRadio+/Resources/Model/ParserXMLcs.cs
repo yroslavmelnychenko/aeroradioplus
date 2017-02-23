@@ -16,9 +16,10 @@ namespace AeroRadio_.Resources.Model
 
         public static bool loadPlayList(string xmlFiles,ListBox rigrightListBox)
         {
+            list.Clear();
             rigrightListBox.Items.Clear();
             try
-            {
+            {                
                 XmlDocument xDoc = new XmlDocument();
                 xDoc.Load(xmlFiles);
                 XmlNodeList xmlNodeList = xDoc.SelectNodes("//stations/station");
@@ -30,8 +31,12 @@ namespace AeroRadio_.Resources.Model
                     echo.Url = Node.Attributes.GetNamedItem("url").Value;
                     list.Add(echo);
                 }
+                
                 foreach (Stations s in list)
+                {                    
                     rigrightListBox.Items.Add(s);
+                }         
+                
                 return true;
             }
             catch

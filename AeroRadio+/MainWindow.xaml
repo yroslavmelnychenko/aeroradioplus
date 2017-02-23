@@ -85,7 +85,7 @@
             x:Name="Artist"
             Grid.Row="1"
             Grid.Column="3"
-            Grid.ColumnSpan="4"
+            Grid.ColumnSpan="6"
             HorizontalAlignment="Center"
             FontFamily="Segoe UI"
             FontSize="12"
@@ -96,7 +96,7 @@
             x:Name="Titles"
             Grid.Row="2"
             Grid.Column="3"
-            Grid.ColumnSpan="4"
+            Grid.ColumnSpan="6"
             HorizontalAlignment="Center"
             FontFamily="Segoe UI"
             FontSize="12"
@@ -168,8 +168,8 @@
             x:Name="albumURL"
             Grid.Row="3"
             Grid.Column="4"
-            Grid.ColumnSpan="3"
-            Source="Resources/Images/Gramaphone.png" />
+            Grid.ColumnSpan="3"            
+            Source="{Binding ImgUrl, UpdateSourceTrigger=PropertyChanged}" />
     </Grid>
 
 </Controls:MetroWindow>

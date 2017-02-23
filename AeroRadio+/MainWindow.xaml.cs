@@ -25,7 +25,6 @@ namespace AeroRadio_
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
-        public ObservableCollection<Albums> Albums;
         public MainWindow()
         {
             InitializeComponent();
