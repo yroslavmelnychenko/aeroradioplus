@@ -4,5 +4,5 @@ This is a simple internet radio station based by open-source projects:
  MaterialDesignInXaml Toolkit,
  MahApps.Metro, LastFm.
  
- ![aeroradioplus2](https://cloud.githubusercontent.com/assets/25839218/23257381/36bca734-f9cc-11e6-97b0-7c5ef88e9d6a.JPG)
-![aeroradioplus3](https://cloud.githubusercontent.com/assets/25839218/23257382/36c091d2-f9cc-11e6-8470-5f8a457d3d86.JPG)
+![aeroradioplus1](https://cloud.githubusercontent.com/assets/25839218/23648658/45a40466-0324-11e7-9b20-1f35b63222eb.JPG)
+![aeroradioplus2](https://cloud.githubusercontent.com/assets/25839218/23648657/45a37dca-0324-11e7-93c0-f264aff8063a.JPG)
