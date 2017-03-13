@@ -8,18 +8,11 @@
     Title="AeroRadio+"
     Width="562.134"
     Height="385"
-    DataContext="{Binding RelativeSource={RelativeSource Self}}"
     ResizeMode="CanMinimize">
     <Controls:MetroWindow.Background>
         <ImageBrush ImageSource="Resources/Images/background.jpg" />
     </Controls:MetroWindow.Background>
-    <Controls:MetroWindow.Resources>
-        <sr:Albums x:Key="titleartist" />
-    </Controls:MetroWindow.Resources>
     <Grid>
-        <Grid.Resources>
-            <sr:Stations x:Key="customers" />
-        </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="43*" />
             <RowDefinition Height="28*" />
@@ -67,14 +60,16 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <Ellipse
-                            Width="40"
-                            Height="39"
-                            Stroke="White">
-                            <Ellipse.Fill>
+                        <Rectangle
+                            Width="45"
+                            Height="45"
+                            RadiusX="50"
+                            RadiusY="50"
+                            RenderOptions.BitmapScalingMode="HighQuality">
+                            <Rectangle.Fill>
                                 <ImageBrush ImageSource="{Binding Images}" />
-                            </Ellipse.Fill>
-                        </Ellipse>
+                            </Rectangle.Fill>
+                        </Rectangle>
                         <TextBlock Margin="8" Text="{Binding Name}" />
                     </StackPanel>
                 </DataTemplate>
@@ -168,8 +163,10 @@
             x:Name="albumURL"
             Grid.Row="3"
             Grid.Column="4"
-            Grid.ColumnSpan="3"            
+            Grid.ColumnSpan="3"
+            RenderOptions.BitmapScalingMode="HighQuality"
             Source="{Binding ImgUrl, UpdateSourceTrigger=PropertyChanged}" />
+
     </Grid>
 
 </Controls:MetroWindow>

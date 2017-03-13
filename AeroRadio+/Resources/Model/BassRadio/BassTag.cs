@@ -18,10 +18,14 @@ namespace AeroRadio_.Resources.Model.BassRadio
     {
         public static string API_KEY = "29f45b8bf883f3f46ca766b238868e60";
         public static string API_SECRET = "9d8f623cf118dc94b6fb7538709aa14c";
+        public static Session session;
+        public static Album crobAlbum;
+        public static Artist crobArtist;
         public static Albums titleArtist = new Albums();
         public static SYNCPROC _mySync;
         public static TAG_INFO _tags;
         public delegate void updateTagDelegate();
+        public delegate void updateImagesURLDelegate();
 
         public static void syncStreamTitleUpdates(int channel)
         {
@@ -35,40 +39,41 @@ namespace AeroRadio_.Resources.Model.BassRadio
             user = Bass.BASS_ChannelGetTags(channel, BASSTag.BASS_TAG_META);
             _tags.UpdateFromMETA(user, TAGINFOEncoding.Ansi, false);
             Application.Current.Dispatcher.Invoke(new updateTagDelegate(updateTags));
-        }
+         }
 
         public static void updateTags()
         {
-            if (BassTags.BASS_TAG_GetFromURL(BassModelLive.audioStreamBass, _tags) && _tags != null)
+
+            if (BassTags.BASS_TAG_GetFromURL(BassModelLive.audioStreamBass, _tags) && _tags.artist != "")
             {
-                Session session = new Session(API_KEY, API_SECRET);
-                Artist scrobArtist = new Artist(_tags.artist, session);
-                Album crobAlbum = new Album(_tags.artist, _tags.title, session);
-                
-                titleArtist.Artist = _tags.artist;
-                titleArtist.Titles = _tags.title;
                 try
                 {
-                    if (crobAlbum.GetImageURL() != null)
+                    session = new Session(API_KEY, API_SECRET);
+                    crobAlbum = new Album(_tags.artist, _tags.title, session);
+                    crobArtist = new Artist(_tags.artist, session);
+
+                    titleArtist.Artist = _tags.artist;
+                    titleArtist.Titles = _tags.title;
+                    titleArtist.ImgUrl = crobAlbum.GetImageURL();
+                }
+                catch
+                {
+                    try
                     {
-                        titleArtist.ImgUrl = scrobArtist.GetImageURL();
+                        titleArtist.ImgUrl = crobArtist.GetImageURL();
                     }
-                    else
+                    catch
                     {
-                        titleArtist.ImgUrl = scrobArtist.GetImageURL();
+                        titleArtist.ImgUrl = "";
                     }
                 }
-                catch {
-                    titleArtist.ImgUrl = " ";
-                }               
-                                 
             }
-            else 
+            else if (_tags != null)
             {
                 titleArtist.Artist = _tags.album;
                 titleArtist.Titles = _tags.comment;
-            }
 
+            }
         }
     }
 }

@@ -13,7 +13,6 @@ C:\Users\y.melnychenko\documents\visual studio 2015\Projects\AeroRadio+\AeroRadi
 C:\Users\y.melnychenko\documents\visual studio 2015\Projects\AeroRadio+\AeroRadio+\bin\x86\Release\MaterialDesignColors.pdb
 C:\Users\y.melnychenko\documents\visual studio 2015\Projects\AeroRadio+\AeroRadio+\bin\x86\Release\MaterialDesignThemes.Wpf.pdb
 C:\Users\y.melnychenko\documents\visual studio 2015\Projects\AeroRadio+\AeroRadio+\bin\x86\Release\MaterialDesignThemes.Wpf.xml
-C:\Users\y.melnychenko\documents\visual studio 2015\Projects\AeroRadio+\AeroRadio+\obj\x86\Release\AeroRadio+.csprojResolveAssemblyReference.cache
 C:\Users\y.melnychenko\documents\visual studio 2015\Projects\AeroRadio+\AeroRadio+\obj\x86\Release\Resources\ViewStyles\Icons.baml
 C:\Users\y.melnychenko\documents\visual studio 2015\Projects\AeroRadio+\AeroRadio+\obj\x86\Release\Resources\ViewStyles\IconsNonShared.baml
 C:\Users\y.melnychenko\documents\visual studio 2015\Projects\AeroRadio+\AeroRadio+\obj\x86\Release\MainWindow.g.cs
@@ -31,6 +30,6 @@ C:\Users\y.melnychenko\documents\visual studio 2015\Projects\AeroRadio+\AeroRadi
 C:\Users\y.melnychenko\documents\visual studio 2015\Projects\AeroRadio+\AeroRadio+\obj\x86\Release\AeroRadio+.csproj.GenerateResource.Cache
 C:\Users\y.melnychenko\documents\visual studio 2015\Projects\AeroRadio+\AeroRadio+\obj\x86\Release\AeroRadio+.exe
 C:\Users\y.melnychenko\documents\visual studio 2015\Projects\AeroRadio+\AeroRadio+\obj\x86\Release\AeroRadio+.pdb
-C:\Users\y.melnychenko\documents\visual studio 2015\Projects\AeroRadio+\AeroRadio+\obj\x86\Release\GeneratedInternalTypeHelper.g.cs
 C:\Users\y.melnychenko\documents\visual studio 2015\Projects\AeroRadio+\AeroRadio+\bin\x86\Release\Hqub.Lastfm.dll
 C:\Users\y.melnychenko\documents\visual studio 2015\Projects\AeroRadio+\AeroRadio+\bin\x86\Release\Mono.HttpUtility.dll
+C:\Users\y.melnychenko\Documents\Visual Studio 2015\Projects\AeroRadio+\AeroRadio+\obj\x86\Release\AeroRadio+.csprojResolveAssemblyReference.cache

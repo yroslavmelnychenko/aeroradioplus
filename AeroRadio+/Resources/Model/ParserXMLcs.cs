@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -14,12 +15,13 @@ namespace AeroRadio_.Resources.Model
     {
         public static  List<Stations> list = new List<Stations>();
 
-        public static bool loadPlayList(string xmlFiles,ListBox rigrightListBox)
+        public  static async Task loadPlayList(string xmlFiles, ListBox rigrightListBox)
         {
             list.Clear();
             rigrightListBox.Items.Clear();
             try
-            {                
+            {
+               
                 XmlDocument xDoc = new XmlDocument();
                 xDoc.Load(xmlFiles);
                 XmlNodeList xmlNodeList = xDoc.SelectNodes("//stations/station");
@@ -31,19 +33,19 @@ namespace AeroRadio_.Resources.Model
                     echo.Url = Node.Attributes.GetNamedItem("url").Value;
                     list.Add(echo);
                 }
-                
+
+                await Task.Delay(1000);
+
                 foreach (Stations s in list)
                 {                    
                     rigrightListBox.Items.Add(s);
-                }         
-                
-                return true;
+                }
+
             }
             catch
             {
-                MessageBox.Show("Произошла ошибка в загрузке станций.\nПопробуйте через некоторое время.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return false;
-            }     
+                MessageBox.Show("Произошла ошибка в загрузке станций.\nПопробуйте через некоторое время.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);               
+            }
            
         }
        

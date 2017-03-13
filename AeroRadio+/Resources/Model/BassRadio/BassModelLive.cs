@@ -33,15 +33,13 @@ namespace AeroRadio_.Resources.Model.BassRadio
 
         public static async void startBassStream(string files , int vol)
         {
-            Bass.BASS_StreamFree(audioStreamBass);
+            
             await Task.Run(() =>
             {
-                
-                Bass.BASS_ChannelStop(audioStreamBass);
-                
+                Bass.BASS_StreamFree(audioStreamBass);
 
                 if (InitBass(HZ))
-                {
+                {                    
                     Bass.BASS_SetConfig(BASSConfig.BASS_CONFIG_ASYNCFILE_BUFFER, 5000);
                     Bass.BASS_SetConfig(BASSConfig.BASS_CONFIG_UPDATEPERIOD, 5000);
                     audioStreamBass = Bass.BASS_StreamCreateURL(files, 0, BASSFlag.BASS_STREAM_AUTOFREE | BASSFlag.BASS_STREAM_STATUS, null, IntPtr.Zero);
@@ -57,7 +55,8 @@ namespace AeroRadio_.Resources.Model.BassRadio
                 {
                     MessageBox.Show("Радиостанция в данный момент недоступна.\nПроверьте интернет-соединение.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
-            });         
+            });
+           
         }
 
         public static void PlayStop(Button StartStop)

@@ -43,26 +43,27 @@ namespace AeroRadio_
         }
 
 
-        private void leftListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private async void leftListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             switch (leftListBox.SelectedIndex)
             {
                 case 0:
-                    ParserXMLcs.loadPlayList(@"http://aeroradioplus.ml/PlayList/Club.xml", rightListBox);
+                  await  ParserXMLcs.loadPlayList(@"http://aeroradioplus.ml/PlayList/Club.xml", rightListBox);
                     break;
                 case 1:
-                    ParserXMLcs.loadPlayList(@"http://aeroradioplus.ml/PlayList/Pop.xml", rightListBox);
+                   await ParserXMLcs.loadPlayList(@"http://aeroradioplus.ml/PlayList/Pop.xml", rightListBox);
                     break;
                 case 2:
-                    ParserXMLcs.loadPlayList(@"http://aeroradioplus.ml/PlayList/RnB.xml", rightListBox);
+                   await ParserXMLcs.loadPlayList(@"http://aeroradioplus.ml/PlayList/RnB.xml", rightListBox);
                     break;
                 case 3:
-                    ParserXMLcs.loadPlayList(@"http://aeroradioplus.ml/PlayList/Rock.xml", rightListBox);
+                  await  ParserXMLcs.loadPlayList(@"http://aeroradioplus.ml/PlayList/Rock.xml", rightListBox);
                     break;
                 case 4:
-                    ParserXMLcs.loadPlayList(@"http://aeroradioplus.ml/PlayList/Shanson.xml", rightListBox);
+                   await ParserXMLcs.loadPlayList(@"http://aeroradioplus.ml/PlayList/Shanson.xml", rightListBox);
                     break;
             }
+          
         }
         private void Play()
         {
