@@ -1,4 +1,5 @@
-# aeroradioplus
+# AeroRadioPlus
+[![Build status](https://ci.appveyor.com/api/projects/status/32r7s2skrgm9ubva/branch/mastertrue)](https://ci.appveyor.com/project/yroslavmelnychenko/aeroradioplus)
 This is a simple internet radio station based by open-source projects:
  Bass.Net,
  MaterialDesignInXaml Toolkit,
