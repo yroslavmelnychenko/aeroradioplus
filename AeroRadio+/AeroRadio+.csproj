@@ -76,8 +76,9 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bass.Net">
-      <HintPath>..\..\..\..\..\Desktop\v4.5\Bass.Net.dll</HintPath>
+    <Reference Include="Bass.Net, Version=2.4.12.3, Culture=neutral, PublicKeyToken=b7566c273e6ef480, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bass.NetWrapper.2.4.12.4\lib\net45\Bass.Net.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Hqub.Lastfm, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Hqub.Last.fm.1.0.2\lib\net45\Hqub.Lastfm.dll</HintPath>
@@ -180,6 +181,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="LICENSE.rtf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -194,6 +196,7 @@
     <Content Include="bass.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="readme.txt" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\background.jpg" />
