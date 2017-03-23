@@ -1,4 +1,4 @@
-Configuration: Release
+
 
 # restore Nu Get packages before running MSBuild
 before build:
