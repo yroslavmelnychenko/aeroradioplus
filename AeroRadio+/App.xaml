@@ -23,7 +23,7 @@
                 <ResourceDictionary Source="Resources/ViewStyles/Button.xaml" />
                 <ResourceDictionary Source="Resources/ViewStyles/Scrollbar.xaml" />
                 <ResourceDictionary Source="Resources/ViewStyles/ListBox.xaml" />
-
+                <ResourceDictionary Source="Resources/ViewStyles/Hyperlink.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
 

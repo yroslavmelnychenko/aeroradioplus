@@ -17,6 +17,7 @@ using AeroRadio_.Resources.Model;
 using System.Xml;
 using AeroRadio_.Resources.Model.BassRadio;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 
 namespace AeroRadio_
 {
@@ -132,6 +133,11 @@ namespace AeroRadio_
             }
         }
 
+        private void Hyperlink_OnRequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
+            e.Handled = true;
+        }
     }
 }
 

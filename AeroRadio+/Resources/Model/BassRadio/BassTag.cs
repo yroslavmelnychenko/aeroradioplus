@@ -44,7 +44,7 @@ namespace AeroRadio_.Resources.Model.BassRadio
         public static void updateTags()
         {
 
-            if (BassTags.BASS_TAG_GetFromURL(BassModelLive.audioStreamBass, _tags) && _tags.artist != "")
+            if (BassTags.BASS_TAG_GetFromURL(BassModelLive.audioStreamBass, _tags) && _tags.artist != " ")
             {
                 try
                 {
@@ -55,12 +55,14 @@ namespace AeroRadio_.Resources.Model.BassRadio
                     titleArtist.Artist = _tags.artist;
                     titleArtist.Titles = _tags.title;
                     titleArtist.ImgUrl = crobAlbum.GetImageURL();
+                    titleArtist.CustomUrl = crobAlbum.GetURL(0);
                 }
                 catch
                 {
                     try
                     {
                         titleArtist.ImgUrl = crobArtist.GetImageURL();
+                        titleArtist.CustomUrl = crobArtist.GetURL(0);
                     }
                     catch
                     {

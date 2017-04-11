@@ -52,7 +52,20 @@ namespace AeroRadio_.Resources.Model
                 onPropertyChanged("ImgUrl");
             }
         }
-                
+
+        string _customUrl;
+        public string CustomUrl
+        {
+            get
+            {
+                return _customUrl;
+            }
+            set
+            {
+                _customUrl = value;
+                onPropertyChanged("CustomUrl");
+            }
+        } 
 
         void onPropertyChanged(params string[] propertyNames)
         {

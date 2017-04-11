@@ -76,29 +76,45 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
+
+
         <TextBlock
-            x:Name="Artist"
             Grid.Row="1"
             Grid.Column="3"
             Grid.ColumnSpan="6"
-            HorizontalAlignment="Center"
-            FontFamily="Segoe UI"
-            FontSize="12"
-            Foreground="White"
-            Text="{Binding Artist, UpdateSourceTrigger=PropertyChanged}" />
+            HorizontalAlignment="Center">
+
+            <Hyperlink
+                NavigateUri="{Binding CustomUrl, UpdateSourceTrigger=PropertyChanged}"
+                RequestNavigate="Hyperlink_OnRequestNavigate"
+                Style="{DynamicResource hyperlink}">
+
+                <TextBlock
+                    FontFamily="Segoe UI"
+                    FontSize="12"
+                    Foreground="White"
+                    Text="{Binding Artist, UpdateSourceTrigger=PropertyChanged}" />
+
+            </Hyperlink>
+        </TextBlock>
 
         <TextBlock
-            x:Name="Titles"
             Grid.Row="2"
             Grid.Column="3"
             Grid.ColumnSpan="6"
-            HorizontalAlignment="Center"
-            FontFamily="Segoe UI"
-            FontSize="12"
-            Foreground="White"
-            Text="{Binding Titles, UpdateSourceTrigger=PropertyChanged}" />
+            HorizontalAlignment="Center">
 
-
+            <Hyperlink
+                NavigateUri="{Binding CustomUrl, UpdateSourceTrigger=PropertyChanged}"
+                RequestNavigate="Hyperlink_OnRequestNavigate"
+                Style="{DynamicResource hyperlink}">
+                <TextBlock
+                    FontFamily="Segoe UI"
+                    FontSize="12"
+                    Foreground="White"
+                    Text="{Binding Titles, UpdateSourceTrigger=PropertyChanged}" />
+            </Hyperlink>
+        </TextBlock>
 
         <Button
             x:Name="prevButton"

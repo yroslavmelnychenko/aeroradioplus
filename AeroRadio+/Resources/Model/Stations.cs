@@ -11,5 +11,6 @@ namespace AeroRadio_.Resources.Model
         public string Name { get; set; }
         public string Images { get; set; }
         public string Url;
+        
     }
 }
