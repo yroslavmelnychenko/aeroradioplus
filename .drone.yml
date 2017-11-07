@@ -1,32 +1,7 @@
 
-# version format
-version: 1.0.{build}
+pipeline:
+  backend:
+    image: Visual Studio 2015
+    
 
-# you can use {branch} name in version format too
-# version: 1.0.{build}-{branch}
-
-# Do not build on tags (GitHub and BitBucket)
-skip_tags: true
-
-# Start builds on tags only (GitHub and BitBucket)
-skip_non_tags: true
-
-# Skipping commits affecting specific files (GitHub only). More details here: /docs/appveyor-yml
-#skip_commits:
-#  files:
-#    - docs/*
-#    - '**/*.html'
-
-# Including commits affecting specific files (GitHub only). More details here: /docs/appveyor-yml
-#only_commits:
-#  files:
-#    - Project-A/
-#    - Project-B/
-
-# Do not build feature branch with open Pull Requests
-skip_branch_with_pr: true
-
-# Maximum number of concurrent jobs for the project
-max_jobs: 1
-
-
+  
