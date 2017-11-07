@@ -1,7 +1,5 @@
-
 pipeline:
   backend:
-    image: Visual Studio 2015
-    
+    image: golang
 
   
